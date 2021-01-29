@@ -1,8 +1,8 @@
 {
   "name": "fat-json",
   "displayName": "fat-json",
-  "description": "A faster json formatter in rust.",
-  "version": "0.0.5",
+  "description": "A faster formatter for fat json powered by rust.",
+  "version": "0.1.0",
   "publisher": "anthhub",
   "icon": "logo.png",
   "engines": {
@@ -24,20 +24,20 @@
         "mac": "alt+f"
       },
       {
-        "command": "fat-json.format_curr_file",
+        "command": "fat-json.open_and_format_file",
         "when": "resourceLangId == json",
-        "key": "alt+p+f",
-        "mac": "alt+p+f"
+        "key": "alt+o+f",
+        "mac": "alt+o+f"
       }
     ],
     "commands": [
       {
         "command": "fat-json.format_curr_file",
-        "title": "fat-json: format this"
+        "title": ">> fat-json: format curr file"
       },
       {
         "command": "fat-json.open_and_format_file",
-        "title": "fat-json: open and format file"
+        "title": ">> fat-json: open and format file"
       }
     ],
     "menus": {
@@ -51,6 +51,11 @@
       "editor/context": [
         {
           "command": "fat-json.format_curr_file",
+          "when": "resourceLangId == json",
+          "group": "1_modification"
+        },
+        {
+          "command": "fat-json.open_and_format_file",
           "when": "resourceLangId == json",
           "group": "1_modification"
         }
